@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #f0f0ff;
+  --card: #13131a;
+  --card-border: #1e1e2e;
+  --accent: #6c63ff;
+  --accent-dim: #4c44cc;
+  --muted: #8888aa;
 }
 
 @theme inline {
@@ -12,15 +17,25 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tool-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }

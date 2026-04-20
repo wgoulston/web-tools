@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# certificates (never commit Apple certs)
+/certs/*.p12
+/certs/*.cer
