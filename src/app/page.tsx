@@ -1,20 +1,48 @@
 import Link from "next/link";
-import { Crop, Wallet } from "lucide-react";
+import { Crop, QrCode, Braces, KeyRound, Palette, FileCode2 } from "lucide-react";
 
 const tools = [
   {
     href: "/image-crop",
     icon: Crop,
     title: "Image Crop",
-    description: "Interactively crop, resize, and export images with pixel-perfect control.",
+    description: "Interactively crop and export images. Free-form or locked aspect ratios.",
     color: "#6c63ff",
   },
   {
-    href: "/wallet-pass",
-    icon: Wallet,
-    title: "Wallet Pass",
-    description: "Create custom Apple Wallet passes — loyalty cards, coupons, event tickets, and more.",
-    color: "#2eb872",
+    href: "/qr-code",
+    icon: QrCode,
+    title: "QR Code Generator",
+    description: "Turn any URL or text into a scannable QR code. Download as PNG or SVG.",
+    color: "#f59e0b",
+  },
+  {
+    href: "/json-format",
+    icon: Braces,
+    title: "JSON Formatter",
+    description: "Format, validate, and minify JSON. Highlights errors and pretty-prints.",
+    color: "#3b82f6",
+  },
+  {
+    href: "/password",
+    icon: KeyRound,
+    title: "Password Generator",
+    description: "Generate strong passwords with custom length and character sets.",
+    color: "#ef4444",
+  },
+  {
+    href: "/colors",
+    icon: Palette,
+    title: "Color Tools",
+    description: "Pick colors, convert between HEX/RGB/HSL, and generate palettes.",
+    color: "#ec4899",
+  },
+  {
+    href: "/base64",
+    icon: FileCode2,
+    title: "Base64",
+    description: "Encode or decode text and files to/from Base64.",
+    color: "#14b8a6",
   },
 ];
 

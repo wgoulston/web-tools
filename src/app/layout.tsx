@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { auth } from "@/lib/auth";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,19 +20,23 @@ export const metadata: Metadata = {
   description: "Personal web toolbox",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0f] text-[#f0f0ff]">
-        <Nav />
-        <main className="flex-1">{children}</main>
+        <SessionProvider session={session}>
+          {session && <Nav session={session} />}
+          <main className="flex-1">{children}</main>
+        </SessionProvider>
       </body>
     </html>
   );
